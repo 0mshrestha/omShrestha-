@@ -9,7 +9,7 @@ export default function Navbar() {
 
     return (
         <nav className="sticky top-0 z-50 backdrop-blur-md bg-[#0A0A0A]/70 border-b border-gray-800">
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div className="max-w-7xl mx-2 px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
                 <Link href="/" className="text-xl font-bold tracking-tight text-white hover:text-blue-400 transition-colors">
                     Om<span className="text-blue-500">.Shrestha</span>
                 </Link>
