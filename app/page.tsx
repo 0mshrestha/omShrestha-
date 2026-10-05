@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#0A0A0A] text-gray-100 font-mono antialiased">
       <Navbar />
-      <main className="max-w-6xl mx-18 px-4 sm:px-6 lg:px-8 space-y-28 py-8">
+      <main className="max-w-6xl md:mx-18 px-6 sm:px-6 lg:px-8 space-y-28 py-4 lg:py-6">
         <Hero />
         <Contact />
       </main>

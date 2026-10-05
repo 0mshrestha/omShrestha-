@@ -38,7 +38,7 @@ export default function About() {
         <div className="min-h-screen bg-[#000000] text-gray-100 font-mono antialiased">
             <Navbar />
 
-            <section id="about" className="max-w-6xl mx-18 px-4 sm:px-6 lg:px-8 space-y-2 py-6 font-sans">
+            <section id="about" className="max-w-6xl md:mx-10 px-6 sm:px-6 lg:px-8 space-y-2 py-6 font-sans">
 
                 <div className="space-y-6">
                     <h2 className="text-sm font-semibold tracking-wider text-zinc-500 uppercase">
