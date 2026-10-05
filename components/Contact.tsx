@@ -8,7 +8,7 @@ export default function Contact() {
         Whether you want to build something together, talk about an open opportunity, or just chat about backend architectures—my inbox is always open.
       </p>
       <div className="pt-4 flex flex-col sm:flex-row gap-4 sm:items-center">
-        <a href="https://wa.me/9824300741" className="text-center border border-gray-800 hover:bg-gray-900 text-white font-medium px-6 py-3 rounded-lg transition-colors">
+        <a href="https://wa.me/9824300741" target="_blank" rel="noreferrer" className="text-center border border-gray-800 hover:bg-gray-900 text-white font-medium px-6 py-3 rounded-lg transition-colors">
           WhatsApp Me Directly
         </a>
         <div className="flex justify-center space-x-6 text-sm font-medium text-gray-400 py-3 sm:py-0 sm:px-4">

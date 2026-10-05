@@ -1,0 +1,100 @@
+"use client";
+
+import { useRef, MouseEvent } from "react";
+import Image from "next/image";
+import { gsap } from "gsap";
+
+// Customized image positions anchoring them neatly around the central title block
+const photos = [
+    // Top Left (Landscape)
+    { id: 1, src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6-dGjs4F4A_HaIJjIU_mAqZ4yw9f22BVI7qRA9CpzOQ&s=10", alt: "Gallery Item 1", speed: 0.15, top: "15%", left: "8%", width: "w-29 md:w-49", aspect: "aspect-[4/3]" },
+    // Top Center-Left (Portrait)
+    { id: 2, src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5kifRjsXW9CWvhBjtHPAVLXnUAVN-u6P-fcp3pmCSMA&s=10", alt: "Gallery Item 2", speed: 0.28, top: "2%", left: "34%", width: "w-21 md:w-33", aspect: "aspect-[3/4]" },
+    // Top Center-Right (Vertical Portrait)
+    { id: 3, src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVO2kMD6VknkgONKzW3eFxNiYG7UXFOswZl4KlQUuVLw&s=10", alt: "Gallery Item 3", speed: 0.12, top: "2%", left: "57%", width: "w-23 md:w-31", aspect: "aspect-[2/3]" },
+    // Top Right (Portrait)
+    { id: 4, src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS71_LComkxI-toIcS-fetmFkzMzU0p902N0HE2iFgPmQ&s=10", alt: "Gallery Item 4", speed: 0.32, top: "12%", left: "76%", width: "w-21 md:w-29", aspect: "aspect-[3/4]" },
+
+    { id: 5, src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYnJhhOHfZc6Q8mOsSTtdhDZOBHBEIzHJU23o_YknOJQ&s=10", alt: "Gallery Item 5", speed: 0.22, bottom: "14%", left: "6%", width: "w-29 md:w-49", aspect: "aspect-[4/3]" },
+    // Bottom Center-Left (Square-ish Portrait)
+    { id: 6, src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9JdA-C_Y9P4gZyQfPHS9v2q2I5LhPjNDYeJxikJsbuQ&s=10", alt: "Gallery Item 6", speed: 0.35, bottom: "2%", left: "30%", width: "w-21 md:w-33", aspect: "aspect-[4/5]" },
+    // Bottom Center-Right (Portrait)
+    { id: 7, src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRG2tiFOyyUAoVzfibHkrNUiBxb_qDnIwltA_B7dglZqQ&s=10", alt: "Gallery Item 7", speed: 0.18, bottom: "6%", left: "52%", width: "w-21 md:w-38", aspect: "aspect-[3/4]" },
+    // Bottom Right (Landscape)
+    { id: 8, src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTy4A_hwpb-DMnKjVHYNRkP5grG35jecdCmiNbMpzgv9w&s=10", alt: "Gallery Item 8", speed: 0.25, bottom: "16%", left: "74%", width: "w-29 md:w-49", aspect: "aspect-[4/3]" },
+];
+
+export default function BookGallery() {
+    const containerRef = useRef<HTMLDivElement>(null);
+    const imageRefs = useRef<HTMLDivElement[]>([]);
+
+    const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
+        if (!containerRef.current) return;
+
+        const { clientX, clientY } = e;
+        const { innerWidth, innerHeight } = window;
+
+        // Smooth mouse coordinates mapped from center (-1 to 1)
+        const x = (clientX / innerWidth - 0.5) * 2;
+        const y = (clientY / innerHeight - 0.5) * 2;
+
+        imageRefs.current.forEach((img, index) => {
+            if (!img) return;
+            const speed = photos[index].speed;
+
+            // Applies variable parallax offsets to create a true floating/depth effect
+            gsap.to(img, {
+                x: x * 75 * speed,
+                y: y * 75 * speed,
+                ease: "power2.out",
+                duration: 0.7,
+                overwrite: "auto",
+            });
+        });
+    };
+
+    return (
+        <div
+            ref={containerRef}
+            onMouseMove={handleMouseMove}
+            className="relative w-full h-screen overflow-hidden bg-black select-none"
+        >
+            {/* Central typography stack matching your reference exactly */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none z-0 px-4">
+                <h1 className="text-white text-3xl md:text-5xl font-medium tracking-wide mb-2">
+                    Books Gallery
+                </h1>
+                {/* <p className="text-neutral-500 text-sm md:text-base font-light tracking-wider">
+                    Next.js and GSAP
+                </p> */}
+            </div>
+
+            {/* Scattered Outer Images Layer */}
+            <div className="absolute inset-0 w-full h-full z-10 pointer-events-none">
+                {photos.map((photo, i) => (
+                    <div
+                        key={photo.id}
+                        ref={(el) => {
+                            if (el) imageRefs.current[i] = el;
+                        }}
+                        className={`absolute ${photo.width} ${photo.aspect} pointer-events-auto bg-neutral-900 overflow-hidden shadow-xl transition-shadow duration-300 hover:shadow-white/5 hover:z-50`}
+                        style={{
+                            top: photo.top,
+                            bottom: photo.bottom,
+                            left: photo.left
+                        }}
+                    >
+                        <Image
+                            src={photo.src}
+                            alt={photo.alt}
+                            fill
+                            sizes="(max-width: 768px) 200px, 300px"
+                            className="object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700 ease-out"
+                            priority={i < 4}
+                        />
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+}

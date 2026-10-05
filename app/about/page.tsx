@@ -1,5 +1,8 @@
+"use client";
+
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import FloatingGallery from "@/components/bookGallery";
 
 export default function About() {
 
@@ -12,7 +15,7 @@ export default function About() {
         {
             title: "Profile",
             description: "portfolio website built with Next.js, Tailwind CSS, and React, for myself.",
-            tags: ["Next.js", "Tailwind CSS", "JavaScript", "React"],
+            tags: ["Next.js", "Tailwind CSS", "JavaScript", "React", "GSAP"],
         }
     ];
 
@@ -84,8 +87,12 @@ export default function About() {
                     <p className="text-zinc-400 leading-relaxed mt-2 text-[15px]">
                         Hy im an ex Army of freeFire but after retirement everything changed for me i had nothing to do i was just fked by my life,then i started reading because of my friend <b>RojalSakya</b> Big shoutout to you man for asking me to read "The Power of Your Subconscious Mind" and now I love reading books and i started loving it when I read the book "The Alchemist" by Paulo Coelho, than after that got into money shitt "The 7 Habits of Highly Effective People" by Stephen R. Covey, "Rich Dad, Poor Dad" by Robert Kiyosaki, "Psychology of Money" by Morgan Housel,etc. Than finally i got to know about this badass nigga <b>David Goggins</b> from my friend <b><a href="https://github.com/101shreyash/" target="_blank" rel="noreferrer">Shreyash</a></b>  and his story from The Book "Can't Hurt Me", "Never Finished" The most Goated shit i ever read and after that i couldn't stop. Everyday im hungry not hungry for food but for the greatness which is why i play chess to know how great blunder i can do in a single game. have a great day what read doesnt make sense but after all that you knew that im a jacked guy who is hungry for great blunders and currently passionate about backend engineering...
                     </p>
+                    <p className="text-zinc-400 leading-relaxed mt-2 text-[15px]">
+                        And i love listening to music too and the best singer? it obviously <b><a href="https://www.instagram.com/kirawacha_/" target="_blank" rel="noreferrer">Kushal Rai</a></b>
+                    </p>
                 </div>
             </section>
+            <FloatingGallery />
             <Footer />
         </div>
     );
