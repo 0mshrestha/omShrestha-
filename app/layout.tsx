@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next"
 import type { Metadata } from "next";
 import { GeistMono } from 'geist/font/mono';
 import "./globals.css";
@@ -17,6 +18,7 @@ export default function RootLayout({ children }: Readonly<{
     >
       <body className="min-h-full flex flex-col">
         {children}
+        <Analytics />
       </body>
     </html>
   );
