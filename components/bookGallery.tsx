@@ -28,15 +28,15 @@ const photos = [
 ];
 
 const mobilePositions = [
-    { x: -40, y: -250 },      // 1 — top
+    { x: -55, y: -260 },      // 1 — top
     { x: 75, y: -190 },     // 2 — upper right
-    { x: 90, y: 0 },     // 3 — right
-    { x: 75, y: 150 },      // 4 — lower right
+    { x: 72, y: 20 },     // 3 — right
+    { x: 55, y: 170 },      // 4 — lower right
 
-    { x: -45, y: 25 },       // 5 — bottom
-    { x: -104, y: 160 },     // 6 — lower left
-    { x: -165, y: 0 },    // 7 — left
-    { x: -120, y: -160 },    // 8 — upper left
+    { x: -60, y: 35 },       // 5 — bottom
+    { x: -110, y: 205 },     // 6 — lower left
+    { x: -185, y: 25 },    // 7 — left
+    { x: -135, y: -160 },    // 8 — upper left
 ];
 
 export default function BookGallery() {
@@ -113,8 +113,8 @@ export default function BookGallery() {
             const speed = photos[index].speed;
 
             gsap.to(img, {
-                x: x * 75 * speed,
-                y: y * 75 * speed,
+                x: x * 85 * speed,
+                y: y * 85 * speed,
                 ease: "power2.out",
                 duration: 0.8,
                 overwrite: "auto",
