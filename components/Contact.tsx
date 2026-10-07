@@ -12,7 +12,7 @@ export default function Contact() {
           WhatsApp Me Directly
         </a>
         <div className="flex justify-center space-x-6 text-sm font-medium text-gray-400 py-3 sm:py-0 sm:px-4">
-          <a href="https://github.com/perfectgamingpt1-hash" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">GitHub</a>
+          <a href="https://github.com/0mshrestha" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">GitHub</a>
           <a href="https://www.instagram.com/0mshrestha/" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">Instagram</a>
         </div>
       </div>

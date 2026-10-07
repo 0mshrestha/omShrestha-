@@ -47,7 +47,7 @@ export default function BookGallery() {
 
     useEffect(() => {
         const checkMobile = () => {
-            setIsMobile(window.innerWidth < 768);
+            setIsMobile(window.innerWidth < 608);
 
         };
         checkMobile();
@@ -126,7 +126,7 @@ export default function BookGallery() {
         <div
             ref={containerRef}
             onMouseMove={handleMouseMove}
-            className="relative w-full h-screen overflow-hidden bg-black select-none"
+            className="relative w-full h-screen m:h-fit overflow-hidden bg-black select-none"
         >
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none z-0 px-4">
                 <h1 className="text-white text-3xl md:text-5xl font-medium tracking-wide mb-2">
@@ -157,7 +157,7 @@ export default function BookGallery() {
                             src={photo.src}
                             alt={photo.alt}
                             fill
-                            sizes="(max-width: 768px) 200px, 300px"
+                            sizes="(max-width: 600px) 200px, 300px"
                             className="object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700 ease-out"
                             priority={i < 4}
                         />
