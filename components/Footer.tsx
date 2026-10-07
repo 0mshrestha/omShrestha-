@@ -8,7 +8,7 @@ export default function Footer() {
           &copy; {currentYear} Dev.Portfolio. All rights reserved.
         </div>
         <div>
-          Built with a Love and a lots of boredom to do any shit.
+          Built with Love and a lots of boredom to do any shit.
         </div>
       </div>
     </footer>
