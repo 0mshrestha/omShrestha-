@@ -3,6 +3,7 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import FloatingGallery from "@/components/bookGallery";
+import Link from "next/dist/client/link";
 
 export default function About() {
 
@@ -39,12 +40,10 @@ export default function About() {
             <Navbar />
 
             <section id="about" className="max-w-6xl md:mx-10 px-6 sm:px-6 lg:px-2 space-y-1 py-0 font-sans">
-
                 <div className="space-y-6">
-                    <h2 className="text-sm font-semibold tracking-wider text-zinc-500 uppercase">
+                    <h2 className="text-sm mt-1 font-semibold tracking-wider text-zinc-500 uppercase">
                         Featured Work
                     </h2>
-
                     <div className="space-y-8">
                         {projectList.map((project, idx) => (
                             <div key={idx} className="group">

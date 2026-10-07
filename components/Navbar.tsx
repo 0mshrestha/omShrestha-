@@ -19,7 +19,10 @@ export default function Navbar() {
                             More About Me...
                         </Link>
                     )}
-                    <Link href="/#contact" className="hover:text-white transition-colors">Contact</Link>
+                    {pathname !== "/" && (
+                        <Link href="/#contact" className="hover:text-white transition-colors">Contact</Link>)}
+                    {pathname !== "/" && (
+                        <Link href="#Gallery" className="hover:text-white transition-colors">Gallery</Link>)}
                 </div>
             </div>
         </nav>

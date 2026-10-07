@@ -124,6 +124,7 @@ export default function BookGallery() {
 
     return (
         <div
+            id="Gallery"
             ref={containerRef}
             onMouseMove={handleMouseMove}
             className="relative w-full h-screen m:h-fit overflow-hidden bg-black select-none"
