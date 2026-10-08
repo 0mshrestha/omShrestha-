@@ -1,6 +1,6 @@
 export default function Contact() {
   return (
-    <section id="contact" className="space-y-6 max-w-2xl mb-8">
+    <section id="contact" className="space-y-6 max-w-2xl mb-4">
       <h2 className="text-3xl font-bold tracking-tight text-white border-b border-gray-800 pb-2">
         Get In Touch
       </h2>
